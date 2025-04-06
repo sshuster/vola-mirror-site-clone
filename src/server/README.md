@@ -3,22 +3,22 @@
 
 This project uses a client-server architecture with:
 - React frontend (Vite)
-- Express.js backend
+- Flask backend
 - SQLite database
 
 ## Running the Server
 
-To run the server:
+To run the Flask server:
 
 ```bash
 # Navigate to the server directory
 cd src/server
 
-# Install dependencies if not already installed
-npm install
+# Install required Python packages (first time only)
+pip install flask flask-cors
 
 # Run the server
-npx ts-node index.ts
+python app.py
 ```
 
 The server will start on port 3001 by default.
