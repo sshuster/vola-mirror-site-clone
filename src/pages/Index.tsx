@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,14 +15,14 @@ const Index = () => {
   const [serverStatus, setServerStatus] = useState<"checking" | "online" | "offline">("checking");
 
   // Check server health on component mount
-  useState(() => {
+  useEffect(() => {
     const checkHealth = async () => {
       const isHealthy = await checkServerHealth();
       setServerStatus(isHealthy ? "online" : "offline");
     };
     
     checkHealth();
-  });
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

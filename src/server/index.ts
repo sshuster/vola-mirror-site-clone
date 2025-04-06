@@ -1,11 +1,11 @@
 
 import express from 'express';
 import cors from 'cors';
-import { Database } from 'better-sqlite3';
+import BetterSqlite3 from 'better-sqlite3';
 import path from 'path';
 
 // Initialize SQLite database
-const db = new Database(':memory:'); // In-memory database for simplicity
+const db = new BetterSqlite3(':memory:'); // In-memory database for simplicity
 
 // Set up database tables
 db.exec(`
